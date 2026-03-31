@@ -5,10 +5,12 @@ def justeprix():
      
      mystere = random.randint(1,100)
      choix = (0)
+     tentatives = 0
 
      while choix != mystere:
         try :
             choix = int(input("Devine le nombre (entre 1 et 100) : "))
+            tentatives += 1
       
             if choix < mystere:
                print("C'est plus !")
@@ -17,6 +19,6 @@ def justeprix():
            
         except ValueError:
             print("Erreur : Tu dois taper un chiffre entier.")
-     print(f"Bravo, le nombre était bien {mystere}. ")
+     print(f"Bravo, le nombre était bien {mystere}. Tu as trouvé en {tentatives} coups !")
     
 justeprix()
